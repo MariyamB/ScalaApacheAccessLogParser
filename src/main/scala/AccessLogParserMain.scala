@@ -36,13 +36,13 @@ object KafkaProducerScala extends App {
   val topic="ddos_ph"
 
 
-  for(i<- 0 to 150) {
+/*  for(i<- 0 to 150) {
     val record = new ProducerRecord(topic, "key"+i, "value"+i)
     producer.send(record)
-  }
+  }*/
 
-  /*wordCounts.collect().foreach(a => {
-    val message = new ProducerRecord[String, String](kafkaOpTopic, null, a.toString)
-    producer.send(message)})*/
+  wordCounts.collect.foreach(a => {
+    val message = new ProducerRecord[String, String](topic, null, a.toString)
+    producer.send(message)})
   producer.close()
 }
