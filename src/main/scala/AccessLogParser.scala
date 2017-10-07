@@ -82,7 +82,7 @@ class AccessLogParser extends Serializable
 
 /**
  * A sample record:
- * 94.102.63.11 - - [21/Jul/2009:02:48:13 -0700] "GET / HTTP/1.1" 200 18209 "http://acme.com/foo.php" "Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)"
+ * 200.4.91.190 - - [25/May/2015:23:11:15 +0000] "GET / HTTP/1.0" 200 3557 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
  */
 object AccessLogParser{
 
@@ -99,7 +99,7 @@ object AccessLogParser{
         if (arr.size == 3) Some((arr(0), arr(1), arr(2))) else None
     }
     /**
-     *@param A String that looks like "[21/Jul/2009:02:48:13 -0700]"
+     *@param A String that looks like "[25/May/2015:23:11:15 +0000]"
     **/
     def parseDateField(field: String): Option[java.util.Date] = {
         val dateRegex = "\\[(.*?) .+]"
