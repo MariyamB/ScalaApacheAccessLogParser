@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48359828-433f-437b-a2fb-071a000c0c87" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/AccessLogRecordSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/AccessLogRecordSpec.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/SampleData.scala" afterPath="$PROJECT_DIR$/src/test/scala/SampleData.scala" />
-    </list>
+    <list default="true" id="48359828-433f-437b-a2fb-071a000c0c87" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -116,7 +113,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="32" />
     <option name="y" value="33" />
     <option name="width" value="1260" />
@@ -343,7 +340,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="33" width="1284" height="754" extended-state="6" />
+    <frame x="32" y="33" width="1284" height="754" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
