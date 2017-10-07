@@ -1,7 +1,7 @@
 package com.ddos.accesslogparser
 
 /**
- * @see http://httpd.apache.org/docs/2.2/logs.html for details
+ * Declaring the Log Fields
  */
 case class AccessLogRecord (
     clientIpAddress: String,         // should be an ip address, but may also be the hostname if hostname-lookups are enabled

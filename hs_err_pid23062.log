@@ -1,0 +1,286 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 716177408 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2745), pid=23062, tid=140542469715712
+#
+# JRE version:  (7.0_67-b01) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.65-b04 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fd290008800):  JavaThread "Unknown thread" [_thread_in_vm, id=23063, stack(0x00007fd297ebb000,0x00007fd297fbc000)]
+
+Stack: [0x00007fd297ebb000,0x00007fd297fbc000],  sp=0x00007fd297fba1d0,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x99eb8a]  VMError::report_and_die()+0x2ea
+V  [libjvm.so+0x49721b]  report_vm_out_of_memory(char const*, int, unsigned long, char const*)+0x9b
+V  [libjvm.so+0x81d9ae]  os::Linux::commit_memory_impl(char*, unsigned long, bool)+0xfe
+V  [libjvm.so+0x81def9]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x29
+V  [libjvm.so+0x817caa]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2a
+V  [libjvm.so+0x88a7a3]  PSVirtualSpace::expand_by(unsigned long)+0x53
+V  [libjvm.so+0x879433]  PSOldGen::initialize(ReservedSpace, unsigned long, char const*, int)+0x103
+V  [libjvm.so+0x29a3b3]  AdjoiningGenerations::AdjoiningGenerations(ReservedSpace, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)+0x3e3
+V  [libjvm.so+0x83e7e5]  ParallelScavengeHeap::initialize()+0x4d5
+V  [libjvm.so+0x971dba]  Universe::initialize_heap()+0xca
+V  [libjvm.so+0x972f89]  universe_init()+0x79
+V  [libjvm.so+0x5b09f5]  init_globals()+0x65
+V  [libjvm.so+0x95a8ed]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x1ed
+V  [libjvm.so+0x638a34]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x2f8e]  JavaMain+0x9e
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007fd290008800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=23063, stack(0x00007fd297ebb000,0x00007fd297fbc000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:00 1847137                            /usr/java/jdk1.7.0_67-cloudera/bin/java
+00600000-00601000 rw-p 00000000 fd:00 1847137                            /usr/java/jdk1.7.0_67-cloudera/bin/java
+00b40000-00b61000 rw-p 00000000 00:00 0                                  [heap]
+aff80000-bff80000 rw-p 00000000 00:00 0 
+eaa80000-100000000 rw-p 00000000 00:00 0 
+7fd288000000-7fd288270000 rwxp 00000000 00:00 0 
+7fd288270000-7fd290024000 rw-p 00000000 00:00 0 
+7fd290024000-7fd294000000 ---p 00000000 00:00 0 
+7fd295295000-7fd295401000 rw-p 00000000 00:00 0 
+7fd295401000-7fd2955d6000 rw-p 00000000 00:00 0 
+7fd2955d6000-7fd29568c000 rw-p 00000000 00:00 0 
+7fd29568c000-7fd295882000 rw-p 00000000 00:00 0 
+7fd295882000-7fd29589c000 r-xp 00000000 fd:00 1847312                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libzip.so
+7fd29589c000-7fd295a9c000 ---p 0001a000 fd:00 1847312                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libzip.so
+7fd295a9c000-7fd295a9d000 rw-p 0001a000 fd:00 1847312                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libzip.so
+7fd295a9d000-7fd295aa9000 r-xp 00000000 fd:00 915744                     /lib64/libnss_files-2.12.so
+7fd295aa9000-7fd295ca9000 ---p 0000c000 fd:00 915744                     /lib64/libnss_files-2.12.so
+7fd295ca9000-7fd295caa000 r--p 0000c000 fd:00 915744                     /lib64/libnss_files-2.12.so
+7fd295caa000-7fd295cab000 rw-p 0000d000 fd:00 915744                     /lib64/libnss_files-2.12.so
+7fd295cab000-7fd295cd4000 r-xp 00000000 fd:00 1847282                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libjava.so
+7fd295cd4000-7fd295ed4000 ---p 00029000 fd:00 1847282                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libjava.so
+7fd295ed4000-7fd295ed6000 rw-p 00029000 fd:00 1847282                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libjava.so
+7fd295ed6000-7fd295ee3000 r-xp 00000000 fd:00 1847311                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libverify.so
+7fd295ee3000-7fd2960e2000 ---p 0000d000 fd:00 1847311                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libverify.so
+7fd2960e2000-7fd2960e4000 rw-p 0000c000 fd:00 1847311                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/libverify.so
+7fd2960e4000-7fd2960eb000 r-xp 00000000 fd:00 915756                     /lib64/librt-2.12.so
+7fd2960eb000-7fd2962ea000 ---p 00007000 fd:00 915756                     /lib64/librt-2.12.so
+7fd2962ea000-7fd2962eb000 r--p 00006000 fd:00 915756                     /lib64/librt-2.12.so
+7fd2962eb000-7fd2962ec000 rw-p 00007000 fd:00 915756                     /lib64/librt-2.12.so
+7fd2962ec000-7fd29636f000 r-xp 00000000 fd:00 915736                     /lib64/libm-2.12.so
+7fd29636f000-7fd29656e000 ---p 00083000 fd:00 915736                     /lib64/libm-2.12.so
+7fd29656e000-7fd29656f000 r--p 00082000 fd:00 915736                     /lib64/libm-2.12.so
+7fd29656f000-7fd296570000 rw-p 00083000 fd:00 915736                     /lib64/libm-2.12.so
+7fd296570000-7fd2970e0000 r-xp 00000000 fd:00 1847316                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so
+7fd2970e0000-7fd2972df000 ---p 00b70000 fd:00 1847316                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so
+7fd2972df000-7fd2973a4000 rw-p 00b6f000 fd:00 1847316                    /usr/java/jdk1.7.0_67-cloudera/jre/lib/amd64/server/libjvm.so
+7fd2973a4000-7fd2973e4000 rw-p 00000000 00:00 0 
+7fd2973e4000-7fd29756e000 r-xp 00000000 fd:00 915728                     /lib64/libc-2.12.so
+7fd29756e000-7fd29776e000 ---p 0018a000 fd:00 915728                     /lib64/libc-2.12.so
+7fd29776e000-7fd297772000 r--p 0018a000 fd:00 915728                     /lib64/libc-2.12.so
+7fd297772000-7fd297773000 rw-p 0018e000 fd:00 915728                     /lib64/libc-2.12.so
+7fd297773000-7fd297778000 rw-p 00000000 00:00 0 
+7fd297778000-7fd29777a000 r-xp 00000000 fd:00 915734                     /lib64/libdl-2.12.so
+7fd29777a000-7fd29797a000 ---p 00002000 fd:00 915734                     /lib64/libdl-2.12.so
+7fd29797a000-7fd29797b000 r--p 00002000 fd:00 915734                     /lib64/libdl-2.12.so
+7fd29797b000-7fd29797c000 rw-p 00003000 fd:00 915734                     /lib64/libdl-2.12.so
+7fd29797c000-7fd297992000 r-xp 00000000 fd:00 1969408                    /usr/java/jdk1.7.0_67-cloudera/lib/amd64/jli/libjli.so
+7fd297992000-7fd297b92000 ---p 00016000 fd:00 1969408                    /usr/java/jdk1.7.0_67-cloudera/lib/amd64/jli/libjli.so
+7fd297b92000-7fd297b93000 rw-p 00016000 fd:00 1969408                    /usr/java/jdk1.7.0_67-cloudera/lib/amd64/jli/libjli.so
+7fd297b93000-7fd297baa000 r-xp 00000000 fd:00 915752                     /lib64/libpthread-2.12.so
+7fd297baa000-7fd297daa000 ---p 00017000 fd:00 915752                     /lib64/libpthread-2.12.so
+7fd297daa000-7fd297dab000 r--p 00017000 fd:00 915752                     /lib64/libpthread-2.12.so
+7fd297dab000-7fd297dac000 rw-p 00018000 fd:00 915752                     /lib64/libpthread-2.12.so
+7fd297dac000-7fd297db0000 rw-p 00000000 00:00 0 
+7fd297db0000-7fd297dd0000 r-xp 00000000 fd:00 915721                     /lib64/ld-2.12.so
+7fd297de0000-7fd297ebb000 rw-p 00000000 00:00 0 
+7fd297ebb000-7fd297ebe000 ---p 00000000 00:00 0 
+7fd297ebe000-7fd297fc0000 rw-p 00000000 00:00 0 
+7fd297fc2000-7fd297fc4000 rw-p 00000000 00:00 0 
+7fd297fc4000-7fd297fcc000 rw-s 00000000 fd:00 1443447                    /tmp/hsperfdata_cloudera/23062
+7fd297fcc000-7fd297fcd000 rw-p 00000000 00:00 0 
+7fd297fcd000-7fd297fce000 r--p 00000000 00:00 0 
+7fd297fce000-7fd297fcf000 rw-p 00000000 00:00 0 
+7fd297fcf000-7fd297fd0000 r--p 0001f000 fd:00 915721                     /lib64/ld-2.12.so
+7fd297fd0000-7fd297fd1000 rw-p 00020000 fd:00 915721                     /lib64/ld-2.12.so
+7fd297fd1000-7fd297fd2000 rw-p 00000000 00:00 0 
+7ffc4c492000-7ffc4c4a7000 rw-p 00000000 00:00 0                          [stack]
+7ffc4c598000-7ffc4c599000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xms1024m -Xmx1024m -XX:ReservedCodeCacheSize=128m -XX:MaxPermSize=256m 
+java_command: /opt/sbt/bin/sbt-launch.jar run
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
+PATH=/usr/local/firefox:/sbin:/usr/java/jdk1.7.0_67-cloudera/bin:/usr/local/apache-ant/apache-ant-1.9.2/bin:/usr/local/apache-maven/apache-maven-3.0.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/cloudera/bin:/opt/scala-2.11.7/bin:/opt/sbt/bin
+USERNAME=cloudera
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x99f4a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x99f4a0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x81a860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x81a860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x81a860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x81a860], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x81c060], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 6.7 (Final)
+
+uname:Linux 2.6.32-573.el6.x86_64 #1 SMP Thu Jul 23 15:44:03 UTC 2015 x86_64
+libc:glibc 2.12 NPTL 2.12 
+rlimit: STACK 10240k, CORE 0k, NPROC 1024, NOFILE 4096, AS infinity
+load average:30.70 17.72 14.31
+
+/proc/meminfo:
+MemTotal:        8059472 kB
+MemFree:          208084 kB
+Buffers:            5104 kB
+Cached:            56808 kB
+SwapCached:        44640 kB
+Active:          6401256 kB
+Inactive:        1218692 kB
+Active(anon):    6389732 kB
+Inactive(anon):  1172076 kB
+Active(file):      11524 kB
+Inactive(file):    46616 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:       8388604 kB
+SwapFree:         200380 kB
+Dirty:               544 kB
+Writeback:             0 kB
+AnonPages:       7513644 kB
+Mapped:            24004 kB
+Shmem:              3676 kB
+Slab:              72600 kB
+SReclaimable:      28600 kB
+SUnreclaim:        44000 kB
+KernelStack:       28608 kB
+PageTables:        59204 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12418340 kB
+Committed_AS:   22936584 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       32196 kB
+VmallocChunk:   34359697404 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   3676160 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:        8128 kB
+DirectMap2M:     8380416 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 61 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+stepping	: 4
+cpu MHz		: 2699.998
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch rdseed
+bogomips	: 5399.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 61
+model name	: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+stepping	: 4
+cpu MHz		: 2699.998
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 20
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch rdseed
+bogomips	: 5399.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8059472k(208084k free), swap 8388604k(200380k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.65-b04) for linux-amd64 JRE (1.7.0_67-b01), built on Jul 25 2014 09:20:21 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri Oct  6 15:40:10 2017
+elapsed time: 0 seconds
+
