@@ -89,7 +89,7 @@ object AccessLogParser{
     val nullObjectAccessLogRecord = AccessLogRecord("", "", "", "", "", "", "", "", "")
     
     /**
-     * @param A String like "GET /the-uri-here HTTP/1.1"
+     * @param  A String like "GET /the-uri-here HTTP/1.1"
      * @return A Tuple3(requestType, uri, httpVersion). requestType is GET, POST, etc.
      * 
      * Returns a Tuple3 of three blank strings if the method fails.
@@ -99,7 +99,7 @@ object AccessLogParser{
         if (arr.size == 3) Some((arr(0), arr(1), arr(2))) else None
     }
     /**
-     *@param A String that looks like "[25/May/2015:23:11:15 +0000]"
+     *@param  A String that looks like "[25/May/2015:23:11:15 +0000]"
     **/
     def parseDateField(field: String): Option[java.util.Date] = {
         val dateRegex = "\\[(.*?) .+]"

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ScalaApacheAccessLogParser.iml" filepath="$PROJECT_DIR$/ScalaApacheAccessLogParser.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalaapacheaccesslogparser.iml" filepath="$PROJECT_DIR$/.idea/modules/scalaapacheaccesslogparser.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalaapacheaccesslogparser-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scalaapacheaccesslogparser-build.iml" />
     </modules>

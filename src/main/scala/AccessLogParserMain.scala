@@ -7,11 +7,11 @@ object KafkaProducerScala extends App {
   import org.apache.kafka.clients.producer._
   import com.ddos.accesslogparser._
   import org.apache.spark.sql.SparkSession
-  val conf = new SparkConf().setAppName("AccessLogParser").setMaster("local[4]") //Running spark in the pseudo cluster mode with.
+  val conf = new SparkConf().setAppName("AccessLogParser").setMaster("local[4]") //Running spark in the pseudo cluster mode.
   val sc = new SparkContext(conf)
   val spark = SparkSession
     .builder()
-    .appName("Java Spark SQL basic example")
+    .appName("Spark App")
     .config("spark.master", "local")
     .getOrCreate()
   val p = new AccessLogParser
@@ -36,7 +36,7 @@ object KafkaProducerScala extends App {
 
   val producer = new KafkaProducer[String, String](props)//Creating object for kafka producer
 
-  val topic="ddos_ph"//Creating a topic Ddos_ph
+  val topic="ddos_ph"//Topic name
 
   uriCounts.take(100000).foreach(a => { //Pushing messages into the producer
     val message = new ProducerRecord[String, String](topic, null, a.toString)
